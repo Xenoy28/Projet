@@ -181,7 +181,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
         <?php endforeach; ?>
     </div>
     <div class="text-center mt-4">
-        <a href="testimonials.php" class="btn-hero-outline">Voir tous les témoignages →</a>
+        <a href="temoignages.php" class="btn-hero-outline">Voir tous les témoignages →</a>
     </div>
 </div>
 
