@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && ($password === $user['mot_de_passe'] || password_verify($password, $user['mot_de_passe']))) {
             $_SESSION['utilisateur'] = [
-                'id'     => $user['id_utilisateur'],
-                'nom'    => $user['nom'],
-                'prenom' => $user['prenom'],
-                'email'  => $user['email'],
+                    'id'     => $user['id_utilisateur'],
+                    'nom'    => $user['nom'],
+                    'prenom' => $user['prenom'],
+                    'email'  => $user['email'],
             ];
             header('Location: index.php');
             exit;
@@ -147,4 +147,5 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     }
 </script>
 </body>
+
 </html>
