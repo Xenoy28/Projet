@@ -6,14 +6,7 @@ if (isset($_SESSION['utilisateur'])) {
     header('Location: index.php');
     exit;
 }
-
-// ── Connexion BDD ──
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=projet;charset=utf8mb4', 'root', '');
-} catch (PDOException $e) {
-    die('<p style="color:red;font-family:sans-serif;padding:20px;">Connexion BDD impossible : ' . htmlspecialchars($e->getMessage()) . '</p>');
-}
-
+require('connexion.php');
 $erreur  = '';
 $success = '';
 
@@ -124,7 +117,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
             <div class="text-center">
                 <p style="color:#475569;font-size:.85rem;margin-bottom:6px;">Pas encore de compte ?</p>
-                <a href="register.php" style="color:var(--blue);font-weight:600;text-decoration:none;">
+                <a href="inscription.php" style="color:var(--blue);font-weight:600;text-decoration:none;">
                     Créer un compte gratuitement →
                 </a>
             </div>

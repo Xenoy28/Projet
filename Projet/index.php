@@ -17,6 +17,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 </head>
 <body>
 
+<!-- ═══════════ NAVBAR ═══════════ -->
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.php">
@@ -79,12 +80,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
 <section class="hero">
     <div class="container">
-        <?php if ($user): ?>
-            <div class="mb-3" style="color:var(--blue);font-size:.9rem;font-weight:600;">
-                <i class="bi bi-hand-wave me-1"></i>Bon retour, <?= htmlspecialchars($user['prenom']) ?> !
-            </div>
-        <?php endif; ?>
-        <h1>Bienvenue sur ta <span>plateforme</span> 🌿</h1>
+        <h1>Bienvenue sur <span>Serenity</span> 🌿</h1>
         <p>Un espace bienveillant pour t'accompagner dans ton parcours étudiant. Quel que soit ce que tu traverses, tu trouveras ici du soutien, des ressources et une communauté.</p>
         <div class="d-flex gap-3 justify-content-center flex-wrap">
             <a href="communaute.php" class="btn-hero-primary"><i class="bi bi-chat-dots me-2"></i>Parler à un bot</a>
@@ -153,7 +149,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 </div>
 
 <div class="blue-line"></div>
-
 <div class="container mb-5">
     <div class="text-center mb-4">
         <h2 class="sec-title">Témoignages étudiants</h2>
@@ -181,7 +176,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
         <?php endforeach; ?>
     </div>
     <div class="text-center mt-4">
-        <a href="testimonials.php" class="btn-hero-outline">Voir tous les témoignages →</a>
+        <a href="temoignages.php" class="btn-hero-outline">Voir tous les témoignages →</a>
     </div>
 </div>
 
@@ -211,7 +206,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
         </div>
     </div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function selectMood(el) {
