@@ -17,7 +17,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 </head>
 <body>
 
-<!-- ═══════════ NAVBAR ═══════════ -->
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.php">
@@ -78,7 +77,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     </div>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
     <div class="container">
         <?php if ($user): ?>
@@ -95,7 +93,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     </div>
 </section>
 
-<!-- ═══════════ MOOD + VIDEO ═══════════ -->
 <div class="container mb-5">
     <div class="row g-4">
         <div class="col-md-6">
@@ -128,7 +125,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
 <div class="blue-line"></div>
 
-<!-- ═══════════ CATEGORIES ═══════════ -->
 <div class="container mb-5">
     <div class="text-center mb-4">
         <h2 class="sec-title">Catégories par thématique</h2>
@@ -158,7 +154,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
 <div class="blue-line"></div>
 
-<!-- ═══════════ TESTIMONIALS ═══════════ -->
 <div class="container mb-5">
     <div class="text-center mb-4">
         <h2 class="sec-title">Témoignages étudiants</h2>
@@ -190,7 +185,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     </div>
 </div>
 
-<!-- ═══════════ FOOTER ═══════════ -->
 <footer class="py-5 mt-4">
     <div class="container">
         <div class="row align-items-center g-3">
@@ -217,10 +211,6 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
         </div>
     </div>
 </footer>
-
-<!-- ═══════════ CHATBOT FAB ═══════════ -->
-<button class="chat-fab">💬</button>
-<div class="chat-tooltip">Besoin de parler ? Je suis là !</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
