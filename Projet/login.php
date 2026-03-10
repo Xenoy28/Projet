@@ -9,10 +9,7 @@ if (isset($_SESSION['utilisateur'])) {
 
 // ── Connexion BDD ──
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=projet;charset=utf8mb4', 'root', '', [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
+    $pdo = new PDO('mysql:host=localhost;dbname=projet;charset=utf8mb4', 'root', '');
 } catch (PDOException $e) {
     die('<p style="color:red;font-family:sans-serif;padding:20px;">Connexion BDD impossible : ' . htmlspecialchars($e->getMessage()) . '</p>');
 }
@@ -157,4 +154,5 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     }
 </script>
 </body>
+
 </html>
