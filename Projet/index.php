@@ -129,14 +129,16 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
         <?php
         $categories = [
-                ['icon'=>'🧠','title'=>'Santé mentale',     'desc'=>'Stress, anxiété, dépression'],
-                ['icon'=>'👁️','title'=>'Handicap invisible','desc'=>'Comprendre et vivre avec'],
-                ['icon'=>'💰','title'=>'Précarité',          'desc'=>'Aides financières & logement'],
-                ['icon'=>'🌙','title'=>'Isolement',          'desc'=>'Rompre la solitude'],
-                ['icon'=>'🎓','title'=>'Orientation',        'desc'=>'Parcours académique & pro'],
-                ['icon'=>'🏃','title'=>'Bien-être physique', 'desc'=>'Vie saine & équilibrée'],
+            ['icon'=>'🧠','title'=>'Santé mentale',     'desc'=>'Stress, anxiété, dépression', 'slug'=>'sante-mentale'],
+            ['icon'=>'👁️','title'=>'Handicap invisible','desc'=>'Comprendre et vivre avec',    'slug'=>'handicap-invisible'],
+            ['icon'=>'💰','title'=>'Précarité',          'desc'=>'Aides financières & logement','slug'=>'precarite'],
+            ['icon'=>'🌙','title'=>'Isolement',          'desc'=>'Rompre la solitude',          'slug'=>'isolement'],
+            ['icon'=>'🎓','title'=>'Orientation',        'desc'=>'Parcours académique & pro',   'slug'=>'orientation'],
+            ['icon'=>'🏃','title'=>'Bien-être physique', 'desc'=>'Vie saine & équilibrée',      'slug'=>'bien-etre-physique'],
         ];
         foreach ($categories as $c): ?>
+        <div class="col">
+            <a href="ressources.php?theme=<?= $c['slug'] ?>" class="cat-card">
             <div class="col">
                 <a href="ressources.php" class="cat-card">
                     <div class="cat-icon"><?= $c['icon'] ?></div>
