@@ -6,16 +6,7 @@ if (isset($_SESSION['utilisateur'])) {
     header('Location: index.php');
     exit;
 }
-
-// ── Connexion BDD ──
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=projet;charset=utf8mb4', 'root', '', [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
-} catch (PDOException $e) {
-    die('<p style="color:red;font-family:sans-serif;padding:20px;">Connexion BDD impossible : ' . htmlspecialchars($e->getMessage()) . '</p>');
-}
+require_once('connexion.php');
 
 $erreur  = '';
 $success = '';
