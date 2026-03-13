@@ -118,6 +118,12 @@ $soutien = [
 
     </div>
 
+    <div style="text-align:center; margin-top:40px;">
+        <a href="index.php" class="btn-hero-outline">
+            ← Retour à l'accueil
+        </a>
+    </div>
+
 </div>
 
 </body>
