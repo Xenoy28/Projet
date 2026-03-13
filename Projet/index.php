@@ -137,10 +137,8 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
             ['icon'=>'🏃','title'=>'Bien-être physique', 'desc'=>'Vie saine & équilibrée',      'slug'=>'bien-etre-physique'],
         ];
         foreach ($categories as $c): ?>
-        <div class="col">
-            <a href="ressources.php?theme=<?= $c['slug'] ?>" class="cat-card">
             <div class="col">
-                <a href="ressources.php" class="cat-card">
+                <a href="ressources.php?theme=<?= $c['slug'] ?>" class="cat-card">
                     <div class="cat-icon"><?= $c['icon'] ?></div>
                     <h4><?= $c['title'] ?></h4>
                     <p><?= $c['desc'] ?></p>
