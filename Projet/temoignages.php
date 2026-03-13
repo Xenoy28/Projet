@@ -140,6 +140,13 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
     </div>
 
 </div>
+
+<div class="text-center">
+    <a href="index.php" class="btn-hero-outline">
+        <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
+    </a>
+</div>
+
 <footer class="py-5 mt-4">
     <div class="container">
         <div class="row align-items-center g-3">
