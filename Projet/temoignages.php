@@ -141,6 +141,17 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
 </div>
 
+<div class="container mb-5">
+    <div class="text-center mb-4">
+        <h2 class="sec-title">Partagez votre histoire</h2>
+        <p class="sec-sub">Votre expérience peut aider  d'autres étudiants à se sentir moins seuls. N'hésitez pas à partager votre témoignage.</p>
+    </div>
+
+    <div class="row row-cols-5 row-cols-md-6 g-8"></div>
+
+   
+
+
 <div class="text-center">
     <a href="index.php" class="btn-hero-outline">
         <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
