@@ -286,6 +286,11 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
     Besoin de parler ?
 </div>
 
+<div style="text-align:center; margin:40px 0;">
+    <a href="index.php" class="btn-hero-outline">
+        ← Retour à l'accueil
+    </a>
+</div>
 
 <footer class="py-5 mt-4">
 

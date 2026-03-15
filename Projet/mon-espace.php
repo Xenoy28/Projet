@@ -121,47 +121,118 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
         </div>
     </div>
 
-    <div class="text-center">
+    <!-- ═══════════ SUIVI D'HUMEUR ═══════════ -->
+    <div class="mt-5">
+        <h4 style="color:#fff;font-weight:700;margin-bottom:6px;">📊 Mon suivi d'humeur</h4>
+        <p style="color:#64748B;font-size:.88rem;margin-bottom:20px;">Comment t'es-tu senti(e) cette semaine ?</p>
+        <div class="s-card p-4">
+            <div class="d-flex justify-content-center gap-3 flex-wrap mb-3">
+                <div class="mood-btn" onclick="saveMood(this,'Très mal')">😢<span class="mood-label">Très mal</span></div>
+                <div class="mood-btn" onclick="saveMood(this,'Mal')">😟<span class="mood-label">Mal</span></div>
+                <div class="mood-btn" onclick="saveMood(this,'Moyen')">😐<span class="mood-label">Moyen</span></div>
+                <div class="mood-btn" onclick="saveMood(this,'Bien')">🙂<span class="mood-label">Bien</span></div>
+                <div class="mood-btn" onclick="saveMood(this,'Très bien')">😄<span class="mood-label">Très bien</span></div>
+            </div>
+            <div id="mood-history" style="margin-top:16px;"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════ RESSOURCES SAUVEGARDÉES ═══════════ -->
+    <div class="mt-5">
+        <h4 style="color:#fff;font-weight:700;margin-bottom:6px;">🔖 Ressources utiles</h4>
+        <p style="color:#64748B;font-size:.88rem;margin-bottom:20px;">Des liens rapides vers les aides essentielles.</p>
+        <div class="row g-3">
+            <?php
+            $liens = [
+                    ['icon'=>'🧠','titre'=>'Santé mentale','lien'=>'ressources.php?theme=sante-mentale','desc'=>'Stress, anxiété, dépression'],
+                    ['icon'=>'🆘','titre'=>'Numéro 3114','lien'=>'tel:3114','desc'=>'Prévention du suicide 24h/24'],
+                    ['icon'=>'💰','titre'=>'Précarité étudiante','lien'=>'ressources.php?theme=precarite','desc'=>'Aides financières & logement'],
+                    ['icon'=>'☎️','titre'=>'Urgences','lien'=>'urgences.php','desc'=>'Tous les numéros importants'],
+                    ['icon'=>'🎓','titre'=>'Orientation','lien'=>'ressources.php?theme=orientation','desc'=>'Parcours académique & pro'],
+                    ['icon'=>'🤝','titre'=>'Communauté','lien'=>'communaute.php','desc'=>'Parler avec d\'autres étudiants'],
+            ];
+            foreach ($liens as $l): ?>
+                <div class="col-sm-6 col-md-4">
+                    <a href="<?= $l['lien'] ?>" class="cat-card" style="display:flex;align-items:center;gap:14px;padding:18px 20px;text-decoration:none;">
+                        <span style="font-size:1.6rem;"><?= $l['icon'] ?></span>
+                        <div>
+                            <div style="color:#fff;font-weight:600;font-size:.9rem;"><?= $l['titre'] ?></div>
+                            <div style="color:#64748B;font-size:.8rem;"><?= $l['desc'] ?></div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
         <a href="index.php" class="btn-hero-outline">
             <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
         </a>
     </div>
-<footer class="py-5 mt-4">
-    <div class="container">
-        <div class="row align-items-center g-3">
-            <div class="col-md-4">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                    <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:1px solid var(--border);">
-                        <img src="data:image/jpeg;base64,<?= $logoB64 ?>" style="width:100%;height:100%;object-fit:cover;" alt="">
+    <footer class="py-5 mt-4">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:1px solid var(--border);">
+                            <img src="data:image/jpeg;base64,<?= $logoB64 ?>" style="width:100%;height:100%;object-fit:cover;" alt="">
+                        </div>
+                        <span class="brand">SERENITY</span>
                     </div>
-                    <span class="brand">SERENITY</span>
+                    <p style="font-size:.82rem;margin:0;">Là où tout s'apaise.</p>
                 </div>
-                <p style="font-size:.82rem;margin:0;">Là où tout s'apaise.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="d-flex justify-content-center gap-4 flex-wrap">
-                    <a href="index.php">Accueil</a>
-                    <a href="ressources.php">Ressources</a>
-                    <a href="communaute.php">Communauté</a>
-                    <a href="urgences.php">Urgences</a>
+                <div class="col-md-4 text-center">
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <a href="index.php">Accueil</a>
+                        <a href="ressources.php">Ressources</a>
+                        <a href="communaute.php">Communauté</a>
+                        <a href="urgences.php">Urgences</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 text-md-end">
-                <p style="font-size:.82rem;margin:0;">© <?= date('Y') ?> SERENITY. Tous droits réservés.</p>
+                <div class="col-md-4 text-md-end">
+                    <p style="font-size:.82rem;margin:0;">© <?= date('Y') ?> SERENITY. Tous droits réservés.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function selectMood(el) {
-        document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
-        el.classList.add('active');
-    }
-</script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let moodLog = JSON.parse(sessionStorage.getItem('moodLog') || '[]');
+
+        function saveMood(el, label) {
+            document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            const now = new Date();
+            const entry = {
+                label: label,
+                emoji: el.textContent.trim().charAt(0),
+                date: now.toLocaleDateString('fr-FR', {weekday:'short', day:'numeric', month:'short'}),
+                time: now.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'})
+            };
+            moodLog.unshift(entry);
+            if (moodLog.length > 7) moodLog = moodLog.slice(0, 7);
+            sessionStorage.setItem('moodLog', JSON.stringify(moodLog));
+            renderMoodHistory();
+        }
+
+        function renderMoodHistory() {
+            const el = document.getElementById('mood-history');
+            if (!moodLog.length) { el.innerHTML = ''; return; }
+            el.innerHTML = '<p style="color:#64748B;font-size:.82rem;margin-bottom:10px;">Historique récent :</p>' +
+                moodLog.map(e =>
+                    `<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(0,135,255,.05);border:1px solid var(--border);border-radius:8px;margin-bottom:6px;">
+                    <span style="font-size:1.3rem;">${e.emoji}</span>
+                    <div>
+                        <span style="color:#fff;font-size:.88rem;font-weight:600;">${e.label}</span>
+                        <span style="color:#64748B;font-size:.78rem;margin-left:8px;">${e.date} à ${e.time}</span>
+                    </div>
+                </div>`
+                ).join('');
+        }
+
+        renderMoodHistory();
+    </script>
 </body>
 </html>
-
-
-
