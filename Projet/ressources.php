@@ -7,162 +7,162 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 $activeTheme = $_GET['theme'] ?? '';
 
 $themes = [
-    [
-        'slug'  => 'sante-mentale',
-        'icon'  => '🧠',
-        'title' => 'Santé mentale',
-        'color' => '#4F8EF7',
-        'desc'  => 'Stress, anxiété, dépression',
-        'intro' => 'La santé mentale est aussi importante que la santé physique. En période d\'études, il est courant de ressentir du stress, de l\'anxiété ou une profonde tristesse. Tu n\'es pas seul(e) — et il existe des ressources pour t\'aider à traverser ces moments difficiles.',
-        'sections' => [
-            [
-                'subtitle' => '😟 Comprendre l\'anxiété',
-                'text'     => 'L\'anxiété se manifeste par une inquiétude excessive, des palpitations, des tensions musculaires ou des difficultés à se concentrer. Elle est normale en petites doses, mais peut devenir handicapante. Des techniques comme la respiration profonde (cohérence cardiaque), la méditation guidée ou le journaling peuvent aider à la réguler au quotidien.',
-            ],
-            [
-                'subtitle' => '😞 Reconnaître la dépression',
-                'text'     => 'La dépression va au-delà d\'une simple tristesse passagère. Elle se caractérise par une perte d\'intérêt, une fatigue persistante, des changements d\'appétit ou de sommeil, et un sentiment de vide. Si tu ressens ces symptômes depuis plus de deux semaines, il est important d\'en parler à un professionnel de santé (médecin généraliste, psychologue, psychiatre).',
-            ],
-            [
-                'subtitle' => '📚 Gérer le stress académique',
-                'text'     => 'Les examens, les délais et les attentes académiques peuvent générer un stress intense. Quelques stratégies efficaces : décomposer les tâches en petites étapes, utiliser la technique Pomodoro (25 min de travail / 5 min de pause), dormir suffisamment (7–9h) et t\'accorder des moments de décompression sans culpabilité.',
-            ],
-            [
-                'subtitle' => '🆘 Ressources disponibles',
-                'text'     => 'En France, le numéro national de prévention du suicide est le <strong>3114</strong> (24h/24, 7j/7). Les BAPU (Bureaux d\'Aide Psychologique Universitaire) proposent des consultations gratuites aux étudiants. Renseigne-toi auprès de ton service de santé universitaire (SSU/SSE).',
-            ],
+        [
+                'slug'  => 'sante-mentale',
+                'icon'  => '🧠',
+                'title' => 'Santé mentale',
+                'color' => '#4F8EF7',
+                'desc'  => 'Stress, anxiété, dépression',
+                'intro' => 'La santé mentale est aussi importante que la santé physique. En période d\'études, il est courant de ressentir du stress, de l\'anxiété ou une profonde tristesse. Tu n\'es pas seul(e) — et il existe des ressources pour t\'aider à traverser ces moments difficiles.',
+                'sections' => [
+                        [
+                                'subtitle' => '😟 Comprendre l\'anxiété',
+                                'text'     => 'L\'anxiété se manifeste par une inquiétude excessive, des palpitations, des tensions musculaires ou des difficultés à se concentrer. Elle est normale en petites doses, mais peut devenir handicapante. Des techniques comme la respiration profonde (cohérence cardiaque), la méditation guidée ou le journaling peuvent aider à la réguler au quotidien.',
+                        ],
+                        [
+                                'subtitle' => '😞 Reconnaître la dépression',
+                                'text'     => 'La dépression va au-delà d\'une simple tristesse passagère. Elle se caractérise par une perte d\'intérêt, une fatigue persistante, des changements d\'appétit ou de sommeil, et un sentiment de vide. Si tu ressens ces symptômes depuis plus de deux semaines, il est important d\'en parler à un professionnel de santé (médecin généraliste, psychologue, psychiatre).',
+                        ],
+                        [
+                                'subtitle' => '📚 Gérer le stress académique',
+                                'text'     => 'Les examens, les délais et les attentes académiques peuvent générer un stress intense. Quelques stratégies efficaces : décomposer les tâches en petites étapes, utiliser la technique Pomodoro (25 min de travail / 5 min de pause), dormir suffisamment (7–9h) et t\'accorder des moments de décompression sans culpabilité.',
+                        ],
+                        [
+                                'subtitle' => '🆘 Ressources disponibles',
+                                'text'     => 'En France, le numéro national de prévention du suicide est le <a href="tel:3114" style="color:var(--blue);font-weight:700;">3114</a> (24h/24, 7j/7). Les BAPU (Bureaux d\'Aide Psychologique Universitaire) proposent des consultations gratuites aux étudiants. Renseigne-toi auprès de ton service de santé universitaire (SSU/SSE).',
+                        ],
+                ],
         ],
-    ],
-    [
-        'slug'  => 'handicap-invisible',
-        'icon'  => '👁️',
-        'title' => 'Handicap invisible',
-        'color' => '#A78BFA',
-        'desc'  => 'Comprendre et vivre avec',
-        'intro' => 'Le handicap invisible regroupe des troubles qui ne se voient pas au premier regard mais qui impactent profondément le quotidien : troubles dys, TDAH, maladies chroniques, troubles psychiques... Comprendre, se faire reconnaître et obtenir des aménagements est un droit.',
-        'sections' => [
-            [
-                'subtitle' => '🔍 Qu\'est-ce qu\'un handicap invisible ?',
-                'text'     => 'Parmi les handicaps invisibles on trouve : la dyslexie, la dyspraxie, le TDAH (Trouble Déficit de l\'Attention avec ou sans Hyperactivité), les troubles anxieux sévères, la fibromyalgie, les maladies auto-immunes, l\'épilepsie, les troubles bipolaires, et bien d\'autres. Ces situations sont reconnues comme handicaps au sens de la loi du 11 février 2005.',
-            ],
-            [
-                'subtitle' => '📋 Faire reconnaître son handicap à l\'université',
-                'text'     => 'Pour bénéficier d\'aménagements (tiers-temps aux examens, supports adaptés, aide humaine…), il faut contacter la Mission Handicap de ton établissement avec un certificat médical. La MDPH (Maison Départementale des Personnes Handicapées) peut également ouvrir des droits à l\'Allocation aux Adultes Handicapés (AAH).',
-            ],
-            [
-                'subtitle' => '💬 Parler de son handicap : à qui, comment ?',
-                'text'     => 'Tu n\'as aucune obligation de divulguer ton handicap à tes pairs ou à tes professeurs. Cependant, en informer la Mission Handicap te protège et t\'ouvre des droits. Des associations étudiantes spécialisées peuvent t\'accompagner dans ces démarches et rompre l\'isolement lié à ces situations.',
-            ],
-            [
-                'subtitle' => '🌐 Ressources utiles',
-                'text'     => 'L\'<strong>APF France Handicap</strong>, l\'association <strong>DYS-POSITIF</strong>, ou encore <strong>HappyNeuron</strong> proposent des outils pratiques. Le portail <em>Mon parcours handicap</em> (monparcourshandicap.gouv.fr) centralise toutes les démarches administratives.',
-            ],
+        [
+                'slug'  => 'handicap-invisible',
+                'icon'  => '👁️',
+                'title' => 'Handicap invisible',
+                'color' => '#A78BFA',
+                'desc'  => 'Comprendre et vivre avec',
+                'intro' => 'Le handicap invisible regroupe des troubles qui ne se voient pas au premier regard mais qui impactent profondément le quotidien : troubles dys, TDAH, maladies chroniques, troubles psychiques... Comprendre, se faire reconnaître et obtenir des aménagements est un droit.',
+                'sections' => [
+                        [
+                                'subtitle' => '🔍 Qu\'est-ce qu\'un handicap invisible ?',
+                                'text'     => 'Parmi les handicaps invisibles on trouve : la dyslexie, la dyspraxie, le TDAH (Trouble Déficit de l\'Attention avec ou sans Hyperactivité), les troubles anxieux sévères, la fibromyalgie, les maladies auto-immunes, l\'épilepsie, les troubles bipolaires, et bien d\'autres. Ces situations sont reconnues comme handicaps au sens de la loi du 11 février 2005.',
+                        ],
+                        [
+                                'subtitle' => '📋 Faire reconnaître son handicap à l\'université',
+                                'text'     => 'Pour bénéficier d\'aménagements (tiers-temps aux examens, supports adaptés, aide humaine…), il faut contacter la Mission Handicap de ton établissement avec un certificat médical. La MDPH (Maison Départementale des Personnes Handicapées) peut également ouvrir des droits à l\'Allocation aux Adultes Handicapés (AAH).',
+                        ],
+                        [
+                                'subtitle' => '💬 Parler de son handicap : à qui, comment ?',
+                                'text'     => 'Tu n\'as aucune obligation de divulguer ton handicap à tes pairs ou à tes professeurs. Cependant, en informer la Mission Handicap te protège et t\'ouvre des droits. Des associations étudiantes spécialisées peuvent t\'accompagner dans ces démarches et rompre l\'isolement lié à ces situations.',
+                        ],
+                        [
+                                'subtitle' => '🌐 Ressources utiles',
+                                'text'     => 'L\'<strong>APF France Handicap</strong>, l\'association <strong>DYS-POSITIF</strong>, ou encore <strong>HappyNeuron</strong> proposent des outils pratiques. Le portail <a href="https://www.monparcourshandicap.gouv.fr" target="_blank" style="color:var(--blue);">monparcourshandicap.gouv.fr</a> centralise toutes les démarches administratives.',
+                        ],
+                ],
         ],
-    ],
-    [
-        'slug'  => 'precarite',
-        'icon'  => '💰',
-        'title' => 'Précarité',
-        'color' => '#34D399',
-        'desc'  => 'Aides financières & logement',
-        'intro' => 'La précarité étudiante est une réalité pour de nombreuses personnes : difficultés à se loger, à se nourrir, à financer ses études. Des dispositifs d\'aide existent — encore faut-il les connaître. Tu mérites de pouvoir te concentrer sur tes études dans des conditions dignes.',
-        'sections' => [
-            [
-                'subtitle' => '🏠 Se loger : les aides disponibles',
-                'text'     => 'Les APL (Aides Personnalisées au Logement) de la CAF peuvent couvrir une partie de ton loyer. Les CROUS proposent des logements à tarif réduit (résidences universitaires). En cas d\'urgence, le Fonds National d\'Aide d\'Urgence (FNAU) permet d\'obtenir une aide exceptionnelle en faisant une demande auprès de ton CROUS.',
-            ],
-            [
-                'subtitle' => '🍽️ Se nourrir sans se ruiner',
-                'text'     => 'Les restaurants universitaires (CROUS) proposent des repas à 3,30 € pour les étudiants boursiers. Des épiceries solidaires et banques alimentaires existent sur la plupart des campus. L\'application <strong>Too Good To Go</strong> permet également de récupérer des invendus alimentaires à prix réduit.',
-            ],
-            [
-                'subtitle' => '💳 Aides financières pour les études',
-                'text'     => 'Les bourses sur critères sociaux (CROUS) sont la principale aide : elles vont de l\'échelon 0bis à l\'échelon 7. Au-delà, des aides d\'urgence existent via les assistantes sociales du CROUS. Certaines régions, mutuelles, fondations ou mairies proposent aussi des bourses complémentaires. Ne laisse pas la gêne t\'empêcher de demander ce à quoi tu as droit.',
-            ],
-            [
-                'subtitle' => '📞 À qui s\'adresser ?',
-                'text'     => 'Le service social du CROUS est ton premier interlocuteur. <strong>1Jeune1Solution</strong> (1jeune1solution.gouv.fr) recense toutes les aides auxquelles tu peux prétendre. <strong>Mes Aides</strong> (mesaides.gouv.fr) permet de simuler tes droits en quelques minutes.',
-            ],
+        [
+                'slug'  => 'precarite',
+                'icon'  => '💰',
+                'title' => 'Précarité',
+                'color' => '#34D399',
+                'desc'  => 'Aides financières & logement',
+                'intro' => 'La précarité étudiante est une réalité pour de nombreuses personnes : difficultés à se loger, à se nourrir, à financer ses études. Des dispositifs d\'aide existent — encore faut-il les connaître. Tu mérites de pouvoir te concentrer sur tes études dans des conditions dignes.',
+                'sections' => [
+                        [
+                                'subtitle' => '🏠 Se loger : les aides disponibles',
+                                'text'     => 'Les APL (Aides Personnalisées au Logement) de la CAF peuvent couvrir une partie de ton loyer. Les CROUS proposent des logements à tarif réduit (résidences universitaires). En cas d\'urgence, le Fonds National d\'Aide d\'Urgence (FNAU) permet d\'obtenir une aide exceptionnelle en faisant une demande auprès de ton CROUS.',
+                        ],
+                        [
+                                'subtitle' => '🍽️ Se nourrir sans se ruiner',
+                                'text'     => 'Les restaurants universitaires (CROUS) proposent des repas à 3,30 € pour les étudiants boursiers. Des épiceries solidaires et banques alimentaires existent sur la plupart des campus. L\'application <strong>Too Good To Go</strong> permet également de récupérer des invendus alimentaires à prix réduit.',
+                        ],
+                        [
+                                'subtitle' => '💳 Aides financières pour les études',
+                                'text'     => 'Les bourses sur critères sociaux (CROUS) sont la principale aide : elles vont de l\'échelon 0bis à l\'échelon 7. Au-delà, des aides d\'urgence existent via les assistantes sociales du CROUS. Certaines régions, mutuelles, fondations ou mairies proposent aussi des bourses complémentaires. Ne laisse pas la gêne t\'empêcher de demander ce à quoi tu as droit.',
+                        ],
+                        [
+                                'subtitle' => '📞 À qui s\'adresser ?',
+                                'text'     => 'Le service social du CROUS est ton premier interlocuteur. <a href="https://www.1jeune1solution.gouv.fr" target="_blank" style="color:var(--blue);font-weight:600;">1Jeune1Solution</a> recense toutes les aides auxquelles tu peux prétendre. <a href="https://www.mesaides.gouv.fr" target="_blank" style="color:var(--blue);font-weight:600;">Mes Aides</a> permet de simuler tes droits en quelques minutes.',
+                        ],
+                ],
         ],
-    ],
-    [
-        'slug'  => 'isolement',
-        'icon'  => '🌙',
-        'title' => 'Isolement',
-        'color' => '#60A5FA',
-        'desc'  => 'Rompre la solitude',
-        'intro' => 'Se sentir seul(e) est une expérience douloureuse, surtout loin de chez soi pour la première fois. L\'isolement peut toucher n\'importe qui, indépendamment de son nombre d\'amis ou de son entourage. Mais il existe des façons concrètes de tisser des liens et de retrouver un sentiment d\'appartenance.',
-        'sections' => [
-            [
-                'subtitle' => '💡 Comprendre l\'isolement étudiant',
-                'text'     => 'L\'isolement n\'est pas seulement l\'absence de personnes autour de soi — c\'est aussi le sentiment de ne pas être compris ou connecté. Il est amplifié par les changements brutaux liés à l\'entrée dans l\'enseignement supérieur : nouvelle ville, nouveau rythme, perte des repères sociaux habituels. Ce sentiment est très répandu et n\'est pas un signe de faiblesse.',
-            ],
-            [
-                'subtitle' => '🤝 Créer des liens sur le campus',
-                'text'     => 'S\'impliquer dans une association étudiante, rejoindre un club de sport, participer à des événements de ta ville universitaire ou simplement engager une conversation dans ton amphi sont autant de portes d\'entrée vers de nouvelles rencontres. Les BDE (Bureaux Des Étudiants) organisent régulièrement des événements ouverts à tous.',
-            ],
-            [
-                'subtitle' => '📱 Le numérique : allié ou ennemi ?',
-                'text'     => 'Les réseaux sociaux peuvent donner l\'illusion d\'une connexion tout en accentuant le sentiment de solitude. Préfère les interactions réelles, même courtes : un café, une balade, un jeu de société. Des applications comme <strong>Meetup</strong> ou des groupes Facebook locaux permettent de trouver des personnes partageant tes centres d\'intérêt dans ta ville.',
-            ],
-            [
-                'subtitle' => '☎️ Parler à quelqu\'un maintenant',
-                'text'     => '<strong>Nightline France</strong> est une ligne d\'écoute tenue par des étudiants bénévoles, disponible la nuit (21h–2h30) au <strong>09 72 72 98 78</strong>. Le service <strong>Fil Santé Jeunes</strong> (0800 235 236, gratuit) est également disponible 7j/7 pour écouter sans juger.',
-            ],
+        [
+                'slug'  => 'isolement',
+                'icon'  => '🌙',
+                'title' => 'Isolement',
+                'color' => '#60A5FA',
+                'desc'  => 'Rompre la solitude',
+                'intro' => 'Se sentir seul(e) est une expérience douloureuse, surtout loin de chez soi pour la première fois. L\'isolement peut toucher n\'importe qui, indépendamment de son nombre d\'amis ou de son entourage. Mais il existe des façons concrètes de tisser des liens et de retrouver un sentiment d\'appartenance.',
+                'sections' => [
+                        [
+                                'subtitle' => '💡 Comprendre l\'isolement étudiant',
+                                'text'     => 'L\'isolement n\'est pas seulement l\'absence de personnes autour de soi — c\'est aussi le sentiment de ne pas être compris ou connecté. Il est amplifié par les changements brutaux liés à l\'entrée dans l\'enseignement supérieur : nouvelle ville, nouveau rythme, perte des repères sociaux habituels. Ce sentiment est très répandu et n\'est pas un signe de faiblesse.',
+                        ],
+                        [
+                                'subtitle' => '🤝 Créer des liens sur le campus',
+                                'text'     => 'S\'impliquer dans une association étudiante, rejoindre un club de sport, participer à des événements de ta ville universitaire ou simplement engager une conversation dans ton amphi sont autant de portes d\'entrée vers de nouvelles rencontres. Les BDE (Bureaux Des Étudiants) organisent régulièrement des événements ouverts à tous.',
+                        ],
+                        [
+                                'subtitle' => '📱 Le numérique : allié ou ennemi ?',
+                                'text'     => 'Les réseaux sociaux peuvent donner l\'illusion d\'une connexion tout en accentuant le sentiment de solitude. Préfère les interactions réelles, même courtes : un café, une balade, un jeu de société. Des applications comme <strong>Meetup</strong> ou des groupes Facebook locaux permettent de trouver des personnes partageant tes centres d\'intérêt dans ta ville.',
+                        ],
+                        [
+                                'subtitle' => '☎️ Parler à quelqu\'un maintenant',
+                                'text'     => '<strong>Nightline France</strong> est une ligne d\'écoute tenue par des étudiants bénévoles, disponible la nuit (21h–2h30) au <a href="tel:0972729878" style="color:var(--blue);font-weight:700;">09 72 72 98 78</a>. Le service <strong>Fil Santé Jeunes</strong> (<a href="tel:3224" style="color:var(--blue);font-weight:700;">3224</a>, gratuit) est également disponible 7j/7 pour écouter sans juger.',
+                        ],
+                ],
         ],
-    ],
-    [
-        'slug'  => 'orientation',
-        'icon'  => '🎓',
-        'title' => 'Orientation',
-        'color' => '#FBBF24',
-        'desc'  => 'Parcours académique & pro',
-        'intro' => 'Le doute sur son orientation est l\'une des premières sources de détresse étudiante. Se poser des questions sur son avenir professionnel, vouloir changer de filière, ou ne pas savoir quoi faire après le diplôme : tout cela est normal. L\'important, c\'est d\'avoir les bons outils pour avancer.',
-        'sections' => [
-            [
-                'subtitle' => '🗺️ Se questionner sans paniquer',
-                'text'     => 'Il n\'existe pas de parcours linéaire unique. Beaucoup d\'étudiant(e)s changent d\'orientation au moins une fois, et c\'est souvent une chance de mieux se connaître. Prends le temps de lister ce qui te passionne, ce qui te pèse, et ce que tu imagines faire dans dix ans — sans te mettre la pression de trouver une réponse immédiate.',
-            ],
-            [
-                'subtitle' => '📌 Les ressources d\'orientation disponibles',
-                'text'     => 'Chaque université dispose d\'un <strong>SCUIO-IP</strong> (Service Commun Universitaire d\'Information, d\'Orientation et d\'Insertion Professionnelle) qui propose des entretiens gratuits. <strong>Parcoursup</strong> et <strong>Mon Master</strong> centralisent les formations disponibles. <strong>ONISEP</strong> (onisep.fr) propose des fiches métiers et des guides d\'orientation.',
-            ],
-            [
-                'subtitle' => '💼 Explorer le marché du travail',
-                'text'     => 'Les stages, alternances, jobs étudiants et engagements associatifs sont autant d\'expériences qui t\'aident à affiner ton projet. Des plateformes comme <strong>Indeed</strong>, <strong>LinkedIn</strong>, <strong>Jobijoba</strong> ou encore <strong>Welcome to the Jungle</strong> permettent d\'explorer les offres et de comprendre ce que les employeurs recherchent.',
-            ],
-            [
-                'subtitle' => '🧭 Changer de voie : comment faire ?',
-                'text'     => 'Changer de formation est possible et encadré. En cours d\'année, tu peux effectuer une demande de réorientation auprès de ta scolarité. Entre deux années, Parcoursup permet des changements de filière. Le Bilan de Compétences (accessible dès 18 ans) est un accompagnement structuré pour clarifier son projet professionnel avec un conseiller.',
-            ],
+        [
+                'slug'  => 'orientation',
+                'icon'  => '🎓',
+                'title' => 'Orientation',
+                'color' => '#FBBF24',
+                'desc'  => 'Parcours académique & pro',
+                'intro' => 'Le doute sur son orientation est l\'une des premières sources de détresse étudiante. Se poser des questions sur son avenir professionnel, vouloir changer de filière, ou ne pas savoir quoi faire après le diplôme : tout cela est normal. L\'important, c\'est d\'avoir les bons outils pour avancer.',
+                'sections' => [
+                        [
+                                'subtitle' => '🗺️ Se questionner sans paniquer',
+                                'text'     => 'Il n\'existe pas de parcours linéaire unique. Beaucoup d\'étudiant(e)s changent d\'orientation au moins une fois, et c\'est souvent une chance de mieux se connaître. Prends le temps de lister ce qui te passionne, ce qui te pèse, et ce que tu imagines faire dans dix ans — sans te mettre la pression de trouver une réponse immédiate.',
+                        ],
+                        [
+                                'subtitle' => '📌 Les ressources d\'orientation disponibles',
+                                'text'     => 'Chaque université dispose d\'un <strong>SCUIO-IP</strong> (Service Commun Universitaire d\'Information, d\'Orientation et d\'Insertion Professionnelle) qui propose des entretiens gratuits. <strong>Parcoursup</strong> et <strong>Mon Master</strong> centralisent les formations disponibles. <a href="https://www.onisep.fr" target="_blank" style="color:var(--blue);font-weight:600;">ONISEP</a> propose des fiches métiers et des guides d\'orientation.',
+                        ],
+                        [
+                                'subtitle' => '💼 Explorer le marché du travail',
+                                'text'     => 'Les stages, alternances, jobs étudiants et engagements associatifs sont autant d\'expériences qui t\'aident à affiner ton projet. Des plateformes comme <strong>Indeed</strong>, <strong>LinkedIn</strong>, <strong>Jobijoba</strong> ou encore <strong>Welcome to the Jungle</strong> permettent d\'explorer les offres et de comprendre ce que les employeurs recherchent.',
+                        ],
+                        [
+                                'subtitle' => '🧭 Changer de voie : comment faire ?',
+                                'text'     => 'Changer de formation est possible et encadré. En cours d\'année, tu peux effectuer une demande de réorientation auprès de ta scolarité. Entre deux années, Parcoursup permet des changements de filière. Le Bilan de Compétences (accessible dès 18 ans) est un accompagnement structuré pour clarifier son projet professionnel avec un conseiller.',
+                        ],
+                ],
         ],
-    ],
-    [
-        'slug'  => 'bien-etre-physique',
-        'icon'  => '🏃',
-        'title' => 'Bien-être physique',
-        'color' => '#F87171',
-        'desc'  => 'Vie saine & équilibrée',
-        'intro' => 'Le corps et l\'esprit sont profondément liés. Prendre soin de sa santé physique — sommeil, alimentation, activité physique — est l\'un des leviers les plus puissants pour améliorer son bien-être mental. Et pas besoin de devenir athlète : de petits gestes quotidiens suffisent.',
-        'sections' => [
-            [
-                'subtitle' => '😴 Le sommeil : pilier de la santé',
-                'text'     => 'Les étudiant(e)s dorment en moyenne trop peu. Or, le manque de sommeil dégrade la concentration, la mémoire, l\'humeur et le système immunitaire. Vise 7 à 9 heures par nuit. Quelques astuces : éviter les écrans 1h avant de dormir, avoir des horaires réguliers (même le week-end), et pratiquer une courte relaxation ou méditation au coucher.',
-            ],
-            [
-                'subtitle' => '🥗 Bien manger sans se ruiner',
-                'text'     => 'Une alimentation équilibrée n\'implique pas de grands budgets. Cuisiner soi-même (légumes de saison, légumineuses, œufs) est à la fois économique et nutritif. Évite les excès de caféine (café, boissons énergisantes) qui amplifient l\'anxiété. Hydrate-toi correctement — souvent sous-estimé, la déshydratation affecte la concentration.',
-            ],
-            [
-                'subtitle' => '🏋️ L\'activité physique, même un peu',
-                'text'     => 'L\'OMS recommande 150 minutes d\'activité modérée par semaine — soit 20 minutes par jour. Marcher, faire du vélo, nager, danser : toutes les activités comptent. Le sport en groupe (via les associations sportives universitaires, les SUAPS) est aussi un excellent vecteur de liens sociaux et de décompression.',
-            ],
-            [
-                'subtitle' => '🩺 Suivre sa santé : les droits des étudiant(e)s',
-                'text'     => 'Les étudiant(e)s bénéficient de la Sécurité Sociale étudiante. Des consultations de prévention gratuites sont disponibles dans les Services de Santé Universitaire. En cas de coup dur, les mutuelles étudiantes (LMDE, SMENO…) proposent des prises en charge psychologiques remboursées. N\'attends pas que ça aille mal pour consulter.',
-            ],
+        [
+                'slug'  => 'bien-etre-physique',
+                'icon'  => '🏃',
+                'title' => 'Bien-être physique',
+                'color' => '#F87171',
+                'desc'  => 'Vie saine & équilibrée',
+                'intro' => 'Le corps et l\'esprit sont profondément liés. Prendre soin de sa santé physique — sommeil, alimentation, activité physique — est l\'un des leviers les plus puissants pour améliorer son bien-être mental. Et pas besoin de devenir athlète : de petits gestes quotidiens suffisent.',
+                'sections' => [
+                        [
+                                'subtitle' => '😴 Le sommeil : pilier de la santé',
+                                'text'     => 'Les étudiant(e)s dorment en moyenne trop peu. Or, le manque de sommeil dégrade la concentration, la mémoire, l\'humeur et le système immunitaire. Vise 7 à 9 heures par nuit. Quelques astuces : éviter les écrans 1h avant de dormir, avoir des horaires réguliers (même le week-end), et pratiquer une courte relaxation ou méditation au coucher.',
+                        ],
+                        [
+                                'subtitle' => '🥗 Bien manger sans se ruiner',
+                                'text'     => 'Une alimentation équilibrée n\'implique pas de grands budgets. Cuisiner soi-même (légumes de saison, légumineuses, œufs) est à la fois économique et nutritif. Évite les excès de caféine (café, boissons énergisantes) qui amplifient l\'anxiété. Hydrate-toi correctement — souvent sous-estimé, la déshydratation affecte la concentration.',
+                        ],
+                        [
+                                'subtitle' => '🏋️ L\'activité physique, même un peu',
+                                'text'     => 'L\'OMS recommande 150 minutes d\'activité modérée par semaine — soit 20 minutes par jour. Marcher, faire du vélo, nager, danser : toutes les activités comptent. Le sport en groupe (via les associations sportives universitaires, les SUAPS) est aussi un excellent vecteur de liens sociaux et de décompression.',
+                        ],
+                        [
+                                'subtitle' => '🩺 Suivre sa santé : les droits des étudiant(e)s',
+                                'text'     => 'Les étudiant(e)s bénéficient de la Sécurité Sociale étudiante. Des consultations de prévention gratuites sont disponibles dans les Services de Santé Universitaire. En cas de coup dur, les mutuelles étudiantes (LMDE, SMENO…) proposent des prises en charge psychologiques remboursées. N\'attends pas que ça aille mal pour consulter.',
+                        ],
+                ],
         ],
-    ],
 ];
 ?>
 <!DOCTYPE html>
@@ -446,10 +446,6 @@ $themes = [
         </div>
     </div>
 </footer>
-
-<!-- ═══════════ CHATBOT FAB ═══════════ -->
-<button class="chat-fab">💬</button>
-<div class="chat-tooltip">Besoin de parler ? Je suis là !</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>

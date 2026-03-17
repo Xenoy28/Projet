@@ -83,7 +83,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
         <h1>Bienvenue sur <span>Serenity</span> 🌿</h1>
         <p>Un espace bienveillant pour t'accompagner dans ton parcours étudiant. Quel que soit ce que tu traverses, tu trouveras ici du soutien, des ressources et une communauté.</p>
         <div class="d-flex gap-3 justify-content-center flex-wrap">
-            <a href="communaute.php" class="btn-hero-primary"><i class="bi bi-chat-dots me-2"></i>Parler à un bot</a>
+            <a href="communaute.php" class="btn-hero-primary"><i class="bi bi-chat-dots me-2"></i>En parler</a>
             <a href="ressources.php" class="btn-hero-outline"><i class="bi bi-book me-2"></i>Besoin d'aide !</a>
         </div>
     </div>
