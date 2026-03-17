@@ -33,10 +33,10 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
         <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav mx-auto gap-1">
-                <li class="nav-item"><a class="nav-link active" href="index.php">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link " href="index.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="temoignages.php">Témoignages</a></li>
                 <li class="nav-item"><a class="nav-link" href="ressources.php">Ressources</a></li>
-                <li class="nav-item"><a class="nav-link" href="mon-espace.php">Mon Espace</a></li>
+                <li class="nav-item"><a class="nav-link active" href="mon-espace.php">Mon Espace</a></li>
                 <li class="nav-item"><a class="nav-link" href="communaute.php">Communauté</a></li>
                 <li class="nav-item">
                     <a class="nav-link urgence" href="urgences.php">

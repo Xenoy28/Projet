@@ -7,6 +7,19 @@ if (!isset($_SESSION['temoignages_temp'])) {
     $_SESSION['temoignages_temp'] = [];
 }
 
+// Suppression d'un témoignage
+if (isset($_GET['supprimer']) && $user) {
+    $index = (int) $_GET['supprimer'];
+    $auteurTemoignage = $_SESSION['temoignages_temp'][$index]['auteur'] ?? null;
+    $prenomUser = $user['prenom'] ?? '';
+
+    if ($auteurTemoignage === $prenomUser) {
+        array_splice($_SESSION['temoignages_temp'], $index, 1);
+    }
+    header('Location: temoignages.php');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $user) {
     $auteur          = htmlspecialchars(trim($_POST['auteur'] ?? 'Anonyme'));
     $ville_formation = htmlspecialchars(trim($_POST['ville_formation'] ?? ''));
@@ -30,7 +43,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SERENITY – Accueil</title>
+    <title>SERENITY – Témoignages</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -53,8 +66,8 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
         <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav mx-auto gap-1">
-                <li class="nav-item"><a class="nav-link active" href="index.php">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="temoignages.php">Témoignages</a></li>
+                <li class="nav-item"><a class="nav-link " href="index.php">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link active" href="temoignages.php">Témoignages</a></li>
                 <li class="nav-item"><a class="nav-link" href="ressources.php">Ressources</a></li>
                 <li class="nav-item"><a class="nav-link" href="mon-espace.php">Mon Espace</a></li>
                 <li class="nav-item"><a class="nav-link" href="communaute.php">Communauté</a></li>
@@ -82,7 +95,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
                                     <div style="font-size:.78rem;color:#475569;"><?= htmlspecialchars($user['email']) ?></div>
                                 </div>
                             </li>
-                            <li><a class="dropdown-item" href="mon-espace.php"><i class="bi bi-person me-2" style="color:var(--blue)"></i>Mon Espace</a></li>
+                            <li><a class="dropdown-item" href="profil.php"><i class="bi bi-person me-2" style="color:var(--blue)"></i>Profil</a></li>
                             <li><a class="dropdown-item" href="communaute.php"><i class="bi bi-people me-2" style="color:var(--blue)"></i>Communauté</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Déconnexion</a></li>
@@ -117,11 +130,21 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
                 'Orientation'     => 'tag-blue',
         ];
 
-        foreach ($_SESSION['temoignages_temp'] as $t):
+        foreach ($_SESSION['temoignages_temp'] as $i => $t):
             $tagClass = $tagClasses[$t['tag']] ?? 'tag-blue';
+            $isAdmin = false;
+            $peutSupprimer = $user && ($user['prenom'] ?? '') === $t['auteur'];
             ?>
             <div class="col">
-                <div class="testi-card">
+                <div class="testi-card" style="position:relative;">
+                    <?php if ($peutSupprimer): ?>
+                        <a href="temoignages.php?supprimer=<?= $i ?>"
+                           onclick="return confirm('Supprimer ce témoignage ?')"
+                           style="position:absolute;top:10px;right:12px;color:#ef4444;font-size:.8rem;text-decoration:none;"
+                           title="Supprimer">
+                            <i class="bi bi-trash3-fill"></i>
+                        </a>
+                    <?php endif; ?>
                     <div class="quote">&ldquo;</div>
                     <span class="tag <?= $tagClass ?>"><?= $t['tag'] ?></span>
                     <p class="testi-text"><?= $t['texte'] ?></p>
