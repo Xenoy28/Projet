@@ -155,9 +155,14 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
                     <i class="bi bi-shield-check me-2"></i>Enregistrer le nouveau mot de passe
                 </button>
             </form>
+            <div class="divider"><span>ou</span></div>
 
+            <div class="text-center">
+                <a href="compte.php" style="color:var(--blue);font-weight:600;text-decoration:none;">
+                    Modifier profil →
+                </a>
+            </div>
         </div>
-
         <div class="card-footer-link">
             <a href="index.php"><i class="bi bi-arrow-left me-1"></i>Retour à l'accueil</a>
         </div>
