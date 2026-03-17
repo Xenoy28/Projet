@@ -7,7 +7,7 @@ if (!isset($_SESSION['temoignages_temp'])) {
     $_SESSION['temoignages_temp'] = [];
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $user) {
     $auteur          = htmlspecialchars(trim($_POST['auteur'] ?? 'Anonyme'));
     $ville_formation = htmlspecialchars(trim($_POST['ville_formation'] ?? ''));
     $tag             = htmlspecialchars(trim($_POST['tag'] ?? ''));
@@ -250,51 +250,65 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
-            <div class="card p-4" style="background:var(--navy-card);border:1px solid var(--border);border-radius:16px;">
-                <form method="POST">
+
+            <?php if (!$user): ?>
+                <div class="text-center p-4" style="background:var(--navy-card);border:1px solid var(--border);border-radius:16px;">
+                    <i class="bi bi-lock-fill mb-3" style="font-size:2rem;color:var(--blue);display:block;"></i>
+                    <p style="color:#94A3B8;margin-bottom:1.2rem;">Vous devez être connecté pour partager un témoignage.</p>
+                    <a href="login.php" class="btn w-100" style="background:var(--blue);color:#fff;border-radius:10px;font-weight:600;padding:.65rem 1rem;">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Se connecter
+                    </a>
+                </div>
+            <?php else: ?>
+
+                <div class="card p-4" style="background:var(--navy-card);border:1px solid var(--border);border-radius:16px;">
+                    <form method="POST">
 
 
-                    <div class="mb-3">
-                        <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Prénom / Pseudo</label>
-                        <input type="text" name="auteur" class="form-control" placeholder="Ex : Thomas, L1 Droit"
-                               value="<?= htmlspecialchars($user['prenom'] ?? '') ?>"
-                               style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;" required>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Prénom / Pseudo</label>
+                            <input type="text" name="auteur" class="form-control" placeholder="Ex : Thomas, L1 Droit"
+                                   value="<?= htmlspecialchars($user['prenom'] ?? '') ?>"
+                                   style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Ville et formation</label>
-                        <input type="text" name="ville_formation" class="form-control" placeholder="Ex : Paris – L2 Psychologie"
-                               style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;" required>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Ville et formation</label>
+                            <input type="text" name="ville_formation" class="form-control" placeholder="Ex : Paris – L2 Psychologie"
+                                   style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Thématique</label>
-                        <select name="tag" class="form-select"
-                                style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;" required>
-                            <option value="" disabled selected>Choisir une thématique…</option>
-                            <option value="Isolement">Isolement</option>
-                            <option value="Stress">Stress d'examen</option>
-                            <option value="Handicap">Handicap invisible</option>
-                            <option value="Mal-être">Mal-être</option>
-                            <option value="Précarité">Précarité</option>
-                            <option value="Intégration">Intégration</option>
-                            <option value="Santé mentale">Santé mentale</option>
-                        </select>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Thématique</label>
+                            <select name="tag" class="form-select"
+                                    style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;" required>
+                                <option value="" disabled selected>Choisir une thématique…</option>
+                                <option value="Isolement">Isolement</option>
+                                <option value="Stress">Stress d'examen</option>
+                                <option value="Handicap">Handicap invisible</option>
+                                <option value="Mal-être">Mal-être</option>
+                                <option value="Précarité">Précarité</option>
+                                <option value="Intégration">Intégration</option>
+                                <option value="Santé mentale">Santé mentale</option>
+                            </select>
+                        </div>
 
-                    <div class="mb-4">
-                        <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Votre témoignage</label>
-                        <textarea name="texte" class="form-control" rows="5"
-                                  placeholder="Partagez votre expérience en quelques lignes…"
-                                  style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;resize:none;" required></textarea>
-                    </div>
+                        <div class="mb-4">
+                            <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Votre témoignage</label>
+                            <textarea name="texte" class="form-control" rows="5"
+                                      placeholder="Partagez votre expérience en quelques lignes…"
+                                      style="background:#0F172A;border:1px solid var(--border);color:#fff;border-radius:10px;resize:none;" required></textarea>
+                        </div>
 
-                    <button type="submit" class="btn w-100" style="background:var(--blue);color:#fff;border-radius:10px;font-weight:600;padding:.65rem 1rem;">
-                        <i class="bi bi-send-fill me-2"></i>Partager mon témoignage
-                    </button>
+                        <button type="submit" class="btn w-100" style="background:var(--blue);color:#fff;border-radius:10px;font-weight:600;padding:.65rem 1rem;">
+                            <i class="bi bi-send-fill me-2"></i>Partager mon témoignage
+                        </button>
 
-                </form>
-            </div>
+                    </form>
+                </div>
+
+            <?php endif; ?>
+
         </div>
     </div>
 
