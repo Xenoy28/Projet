@@ -149,7 +149,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 
     <div class="row row-cols-5 row-cols-md-6 g-8"></div>
 
-   
+
 
 
 <div class="text-center">
