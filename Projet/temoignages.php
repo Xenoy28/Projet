@@ -253,6 +253,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
             <div class="card p-4" style="background:var(--navy-card);border:1px solid var(--border);border-radius:16px;">
                 <form method="POST">
 
+
                     <div class="mb-3">
                         <label class="form-label" style="color:#94A3B8;font-size:.88rem;">Prénom / Pseudo</label>
                         <input type="text" name="auteur" class="form-control" placeholder="Ex : Thomas, L1 Droit"
