@@ -54,6 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'])) {
     ]);
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer_index'])) {
+    $idx = (int) $_POST['supprimer_index'];
+    $auteurDisc = $discussions[$idx]['auteur'] ?? '';
+    $prenomUser = $user['prenom'] ?? '';
+    if ($prenomUser && $auteurDisc === $prenomUser) {
+        array_splice($discussions, $idx, 1);
+    }
+}
+
 $liste = $filtre
     ? array_values(array_filter($discussions, fn($d) => $d['categorie'] === $filtre))
     : $discussions;
@@ -269,8 +278,11 @@ function getCatProp(string $slug, array $cats, string $prop): string {
                     <a href="communaute.php" class="btn-hero-outline" style="font-size:.85rem;">Voir toutes</a>
                 </div>
             <?php else: ?>
-                <?php foreach ($liste as $d): ?>
-                    <div class="disc-card">
+                <?php foreach ($discussions as $idx => $d):
+                    if ($filtre && $d['categorie'] !== $filtre) continue;
+                    $estAuteur = $user && ($user['prenom'] === $d['auteur']);
+                    ?>
+                    <div class="disc-card" id="disc-<?= $idx ?>">
                         <div class="d-flex gap-3">
                             <div class="disc-avatar"><?= htmlspecialchars($d['initiale']) ?></div>
                             <div style="flex:1;min-width:0;">
@@ -279,7 +291,20 @@ function getCatProp(string $slug, array $cats, string $prop): string {
                                     <?= getCatProp($d['categorie'], $categories, 'emoji') ?>
                                     <?= getCatProp($d['categorie'], $categories, 'label') ?>
                                 </span>
-                                    <span style="font-size:.78rem;color:#64748B;white-space:nowrap;"><?= $d['date'] ?></span>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span style="font-size:.78rem;color:#64748B;white-space:nowrap;"><?= $d['date'] ?></span>
+                                        <?php if ($estAuteur): ?>
+                                            <form method="POST" style="margin:0;" onsubmit="return confirm('Supprimer cette discussion ?');">
+                                                <input type="hidden" name="supprimer_index" value="<?= $idx ?>">
+                                                <button type="submit" title="Supprimer"
+                                                        style="background:none;border:1px solid rgba(239,68,68,.3);border-radius:8px;color:#F87171;font-size:.75rem;padding:2px 8px;cursor:pointer;transition:all .2s;"
+                                                        onmouseover="this.style.background='rgba(239,68,68,.1)'"
+                                                        onmouseout="this.style.background='none'">
+                                                    <i class="bi bi-trash3-fill"></i>
+                                                </button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                                 <div class="disc-title"><?= htmlspecialchars($d['titre']) ?></div>
                                 <div class="disc-msg"><?= htmlspecialchars($d['message']) ?></div>
