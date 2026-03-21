@@ -209,9 +209,72 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function selectMood(el) {
+        const today = new Date().toISOString().split('T')[0]; // "2025-03-21"
+        const saved = sessionStorage.getItem('mood_date');
+
+        // Bloquer si déjà voté aujourd'hui
+        if (saved === today) {
+            const already = localStorage.getItem('mood_emoji');
+            showMoodFeedback(already, 'Tu as déjà enregistré ton humeur aujourd\'hui 😊');
+            return;
+        }
+
+        // Retirer la sélection précédente
         document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
         el.classList.add('active');
+
+        // Récupérer l'emoji (1er caractère du bouton)
+        const emoji = el.textContent.trim().charAt(0);
+        const label = el.querySelector('.mood-label').textContent;
+
+        // Sauvegarder dans localStorage
+        localStorage.setItem('mood_date', today);
+        localStorage.setItem('mood_emoji', emoji);
+        localStorage.setItem('mood_label', label);
+
+        // Sauvegarder dans l'historique (partagé avec mon-espace.php)
+        const now = new Date();
+        const entry = {
+            label: label,
+            emoji: emoji,
+            date: now.toLocaleDateString('fr-FR', {weekday:'short', day:'numeric', month:'short'}),
+            time: now.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'})
+        };
+        let moodLog = JSON.parse(localStorage.getItem('moodLog') || '[]');
+        // Éviter les doublons du même jour
+        moodLog = moodLog.filter(e => e.date !== entry.date);
+        moodLog.unshift(entry);
+        if (moodLog.length > 7) moodLog = moodLog.slice(0, 7);
+        localStorage.setItem('moodLog', JSON.stringify(moodLog));
+
+        showMoodFeedback(emoji, 'Humeur enregistrée pour aujourd\'hui !');
     }
+
+    function showMoodFeedback(emoji, message) {
+        let feedback = document.getElementById('mood-feedback');
+        if (!feedback) {
+            feedback = document.createElement('div');
+            feedback.id = 'mood-feedback';
+            feedback.style.cssText = 'margin-top:14px;text-align:center;font-size:2.5rem;animation:fadeIn .4s ease;';
+            document.querySelector('.mood-btn').closest('.d-flex').after(feedback);
+        }
+        feedback.innerHTML = `<div style="font-size:2.8rem;">${emoji}</div>
+            <p style="color:#94A3B8;font-size:.85rem;margin-top:6px;">${message}</p>`;
+    }
+
+    // Au chargement : si déjà voté aujourd'hui, afficher l'humeur et griser les boutons
+    (function() {
+        const today = new Date().toISOString().split('T')[0];
+        if (localStorage.getItem('mood_date') === today) {
+            const emoji = localStorage.getItem('mood_emoji');
+            // Griser tous les boutons
+            document.querySelectorAll('.mood-btn').forEach(b => {
+                b.style.opacity = '0.4';
+                b.style.cursor = 'not-allowed';
+            });
+            showMoodFeedback(emoji, 'Tu as déjà noté ton humeur aujourd\'hui 😊');
+        }
+    })();
 </script>
 </body>
 </html>
