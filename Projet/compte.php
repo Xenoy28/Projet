@@ -161,7 +161,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-phone"></i></span>
                             <input type="tel" name="numero" class="form-control" placeholder="0612345678"
-                                   value="<?= htmlspecialchars($_POST['numero'] ?? $profil['numero']) ?>">
+                                   value="<?= htmlspecialchars($_POST['numero'] ?? $profil['numero']??'') ?>">
                         </div>
                     </div>
                 </div>
