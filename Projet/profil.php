@@ -53,7 +53,7 @@ $logoB64 = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkM
                                 <?php endif; ?>
                             </p>
                             <a href="mdp.php" class="btn w-100 mb-2" style="background:var(--blue);color:#fff;border-radius:10px;font-size:.88rem;padding:.55rem 1rem;">
-                                <i class="bi bi-pencil-fill me-1"></i>Modifier le profil
+                                <i class="bi bi-pencil-fill me-1"></i>Modifier le mot de passe
                             </a>
                             <a href="compte.php" class="btn w-100" style="background:transparent;border:1px solid var(--border);color:#94A3B8;border-radius:10px;font-size:.88rem;padding:.55rem 1rem;">
                                 <i class="bi bi-gear-fill me-1"></i>Paramètres de compte
