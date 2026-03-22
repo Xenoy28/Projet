@@ -9,15 +9,7 @@ if (!isset($_SESSION['utilisateur'])) {
 
 $user = $_SESSION['utilisateur'];
 
-// ── Connexion BDD ──
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=projet;charset=utf8mb4', 'root', '', [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
-} catch (PDOException $e) {
-    die('<p style="color:red;font-family:sans-serif;padding:20px;">Connexion BDD impossible : ' . htmlspecialchars($e->getMessage()) . '</p>');
-}
+require_once('connexion.php');
 
 // ── Charger les données actuelles depuis la BDD ──
 $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE id_utilisateur = ?');
