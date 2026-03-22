@@ -173,7 +173,7 @@ $soutien = [
                                     <div style="font-size:.78rem;color:#475569;"><?= htmlspecialchars($user['email']) ?></div>
                                 </div>
                             </li>
-                            <li><a class="dropdown-item" href="mon-espace.php"><i class="bi bi-person me-2" style="color:var(--blue)"></i>Mon Espace</a></li>
+                            <li><a class="dropdown-item" href="profil.php"><i class="bi bi-person me-2" style="color:var(--blue)"></i>Profil</a></li>
                             <li><a class="dropdown-item" href="communaute.php"><i class="bi bi-people me-2" style="color:var(--blue)"></i>Communauté</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Déconnexion</a></li>
